@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/image_mosque"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mosque"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_swipe_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/swipe_up_animation_trasparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_stars_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/stars_animation_transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/text_ramadan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_stars_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/stars_animation_transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/text_ramadan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_ramadan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/alkatra_variablefont_wght"
+        android:text="@string/ramadan_kareem"
+        android:textColor="#785877"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/image_mosque" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_second_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/page"
+        android:visibility="gone">
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gif_prayer"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/prayer_animation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_sehri"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/purple"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gif_prayer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_sehri"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_sehri"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sehri"
+                    android:textColor="@color/yellow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_sehri_time"
+                    style="@style/TextContentStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sehri_time"
+                    android:textColor="@color/yellow"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_sehri"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_sehri" />
+
+                <ImageView
+                    android:id="@+id/image_sehri"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/moon"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_sehri"
+                    app:layout_constraintEnd_toEndOf="@+id/constraint_sehri"
+                    app:tint="@color/yellow" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_iftar"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            app:cardBackgroundColor="@color/orange"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/card_sehri">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_iftar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_iftar"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iftar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_iftar_time"
+                    style="@style/TextContentStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/iftar_time"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_iftar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_iftar" />
+
+                <ImageView
+                    android:id="@+id/image_iftar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/sunset"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_iftar"
+                    app:layout_constraintEnd_toEndOf="@+id/constraint_iftar"
+                    app:tint="@color/white" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_taraweh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/orange"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toTopOf="@id/card_daily_read"
+            app:layout_constraintEnd_toEndOf="@+id/card_iftar"
+            app:layout_constraintStart_toStartOf="@+id/card_sehri"
+            app:layout_constraintTop_toBottomOf="@+id/card_iftar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_taraweh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_taraweh"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/taraweh"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_taraweh_time"
+                    style="@style/TextContentStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/taraweh_time"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_taraweh"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_taraweh" />
+
+                <ImageView
+                    android:id="@+id/image_taraweh"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/pray"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_taraweh"
+                    app:layout_constraintEnd_toEndOf="@+id/constraint_taraweh"
+                    app:tint="@color/white" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_daily_read"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/purple"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/constraint_second_screen"
+            app:layout_constraintEnd_toEndOf="@+id/card_iftar"
+            app:layout_constraintStart_toStartOf="@+id/card_sehri"
+            app:layout_constraintTop_toBottomOf="@+id/card_taraweh">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_daily_read"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_daily_read"
+                    style="@style/TextTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quran_daily_read"
+                    android:textColor="@color/yellow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_daily_read_number"
+                    style="@style/TextContentStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/daily_read_part"
+                    android:textColor="@color/yellow"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_daily_read"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_daily_read" />
+
+                <ImageView
+                    android:id="@+id/image_daily_read"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/quran"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_daily_read"
+                    app:layout_constraintEnd_toEndOf="@+id/constraint_daily_read"
+                    app:tint="@color/yellow" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
